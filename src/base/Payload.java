@@ -26,12 +26,12 @@ public class Payload {
         return body;
     }
 
-    public static String bodyForPut(String newAddress, String place_id) {
+    public static String bodyForPut(String place_id, String newAddress) {
 
-        String bodyPut = """
+        String bodyPut ="""
                 {
-                 "place_id"="%s";
-                 "address":"%s"
+                 "place_id":"%s",
+                 "address":"%s",
                  "key":"qaclick123"
                 }
                 """.formatted(place_id, newAddress);
