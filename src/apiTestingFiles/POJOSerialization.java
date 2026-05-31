@@ -1,5 +1,6 @@
 package apiTestingFiles;
 
+
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
@@ -16,7 +17,7 @@ public void setKey(String key) {
 }	 
 	 }
 
-public class POJOClasses {
+public class POJOSerialization {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -31,5 +32,6 @@ public class POJOClasses {
  
    }
 	}
+
 
 
