@@ -11,17 +11,25 @@ public class PojoDeserializationAgain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
-		ResponseBody response = given().queryParam("access_token", "MMuwN1pewuUp9TW1jOGt2w==").when()
-				.get("/oauthapi/getCourseDetails").then().extract().response().as(ResponseBody.class);
+		ResponseBody response = given().queryParam("access_token", "8+3T4uNKSUkrgjN58TtGLg==")
+				.when()
+				.get("/oauthapi/getCourseDetails").then().log().all().extract().response().as(ResponseBody.class);
    
 		
+
+		System.out.println(response.getUrl());
 		
 		
+		System.out.println(response.getCourses()); 
+		List <webAutomation> webCourses = response.getCourses().getWebAutomation();
+		for(webAutomation s: webCourses) {
+			System.out.println(s.getCourseTitle());
+			System.out.println(s.getPrice());
+			
+		}
+		System.out.println("Here is the course : "+response.getCourses().getWebAutomation().get(1).getCourseTitle());
 		
-		
-		PojoDeserializationAgain obj = new PojoDeserializationAgain();
-		obj.webAutomation.getCourseTitle();
-	}
+	}}
 
 	class ResponseBody {
 		private String instructor;
@@ -77,10 +85,10 @@ class coursesClass {
 	public void setWebAutomation(List<webAutomation> webAutomation) {
 		this.webAutomation = webAutomation;
 	}
-	public List<api> getApi() {
+	public List<apii> getApi() {
 		return api;
 	}
-	public void setApi(List<api> api) {
+	public void setApi(List<apii> api) {
 		this.api = api;
 	}
 	public List<mobile> getMobile() {
@@ -89,7 +97,7 @@ class coursesClass {
 	public void setMobile(List<mobile> mobile) {
 		this.mobile = mobile;
 	}
-	private List<api> api;
+	private List<apii> api;
 	private List<mobile> mobile;
 }
 
@@ -110,7 +118,7 @@ class webAutomation{
 	}
 	private String price;
 }
-class api{
+class apii{
 	private String courseTitle;
 	public String getCourseTitle() {
 		return courseTitle;
@@ -142,4 +150,4 @@ class mobile{
 	private String courseTitle;
 	private String price;
 }
-}
+
