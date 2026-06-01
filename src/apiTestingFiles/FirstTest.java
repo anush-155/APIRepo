@@ -27,7 +27,6 @@ public class FirstTest {
 
         String postResponse =
                 given()
-                        .queryParam("key", "qaclick123")
                         .header("content-type", "application/json")
                         .body(Payload.bodyForpost())
 
