@@ -11,7 +11,7 @@ public class PojoDeserializationAgain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI = "https://rahulshettyacademy.com";
-		ResponseBody response = given().queryParam("access_token", "8+3T4uNKSUkrgjN58TtGLg==")
+		ResponseBody response = given().queryParam("access_token", "/qEmM+Hukje7RaS8kV8vtQ==")
 				.when()
 				.get("/oauthapi/getCourseDetails").then().log().all().extract().response().as(ResponseBody.class);
    

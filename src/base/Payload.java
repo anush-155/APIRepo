@@ -38,4 +38,15 @@ public class Payload {
 
         return bodyPut;
     }
+   public enum EnumData {
+    	NAME("Anush"),
+    	ID("123"),
+    	PHONE("1234567890");
+    public final String dataField;
+    	
+    	EnumData(String dataField){
+    		this.dataField = dataField;
+    	}
+    }
 }
+
